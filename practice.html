@@ -1,230 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JavaScript Practice Exercises</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice</title>
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        line-height: 1.8;
-    }
-
-    section {
-        border: 1px solid #ccc;
-        padding: 15px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-    }
-
-    button {
-        padding: 8px 12px;
-        cursor: pointer;
-    }
-
-    input {
-        padding: 5px;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>JavaScript Practice Exercises</h1>
+    <h1>JavaScript Practice Exercises</h1>
 
-<!-- Exercise 1 -->
-<section>
-    <h2>1. Change Paragraph Text</h2>
-    <button onclick="changeText()">Click Me</button>
-    <p id="para1">Original Text</p>
-</section>
+    <!-- Exercise 1 -->
+    <section>
+        <h2>1. Change Paragraph Text</h2>
+        <button onclick="changeText()">Click Me</button>
+        <p id="para1">Original Text</p>
+    </section>
 
-<!-- Exercise 5 -->
-<section>
-    <h2>2. Change Background Color</h2>
-    <button onclick="changeColor()">Change Background</button>
-</section>
+    <!-- Exercise 5 -->
+    <section>
+        <h2>2. Change Background Color</h2>
+        <button onclick="changeColor()">Change Background</button>
+    </section>
 
-<!-- Exercise 6 -->
-<section>
-    <h2>3. Display Input Text</h2>
-    <input type="text" id="userInput" placeholder="Enter text">
-    <button onclick="showText()">Show</button>
-    <div id="output"></div>
-</section>
+    <!-- Exercise 6 -->
+    <section>
+        <h2>3. Display Input Text</h2>
 
-<!-- Exercise 10 -->
-<section>
-    <h2>4. Current Date & Time</h2>
-    <button onclick="showDate()">Show Date</button>
-    <p id="date"></p>
-</section>
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Enter text">
 
-<!-- Exercise 13 -->
-<section>
-    <h2>5. Hide / Show Paragraph</h2>
-    <button onclick="toggleParagraph()">Toggle</button>
+        <button onclick="showText()">Show</button>
 
-    <p id="togglePara">
-        This paragraph can be hidden and shown.
-    </p>
-</section>
+        <div id="output"></div>
+    </section>
 
-<!-- Exercise 11 -->
-<section>
-    <h2>6. Fruits List</h2>
-    <ul id="fruitList"></ul>
-</section>
+    <!-- Exercise 10 -->
+    <section>
+        <h2>4. Current Date & Time</h2>
 
-<script>
+        <button onclick="showDate()">
+            Show Date & Time
+        </button>
 
-/* Exercise 1 */
-function changeText() {
-    document.getElementById("para1").textContent =
-        "Paragraph text changed!";
-}
+        <p id="date"></p>
+    </section>
 
-/* Exercise 5 */
-function changeColor() {
-    let colors = ["lightblue", "lightgreen", "lightyellow", "pink", "lavender"];
+    <!-- Exercise 13 -->
+    <section>
+        <h2>5. Hide / Show Paragraph</h2>
 
-    let randomColor =
-        colors[Math.floor(Math.random() * colors.length)];
+        <button onclick="toggleParagraph()">
+            Toggle Paragraph
+        </button>
 
-    document.body.style.backgroundColor = randomColor;
-}
+        <p id="togglePara">
+            This paragraph can be hidden and shown.
+        </p>
+    </section>
 
-/* Exercise 6 */
-function showText() {
-    let text = document.getElementById("userInput").value;
+    <!-- Exercise 11 -->
+    <section>
+        <h2>6. Fruits List</h2>
 
-    document.getElementById("output").textContent = text;
-}
+        <ul id="fruitList"></ul>
+    </section>
 
-/* Exercise 10 */
-function showDate() {
-    document.getElementById("date").textContent =
-        new Date();
-}
-
-/* Exercise 13 */
-function toggleParagraph() {
-
-    let para =
-        document.getElementById("togglePara");
-
-    if (para.style.display === "none") {
-        para.style.display = "block";
-    } else {
-        para.style.display = "none";
-    }
-}
-
-/* Exercise 11 */
-let fruits = ["Apple", "Banana", "Mango", "Orange"];
-
-let list = document.getElementById("fruitList");
-
-fruits.forEach(function(fruit) {
-
-    let li = document.createElement("li");
-
-    li.textContent = fruit;
-
-    list.appendChild(li);
-});
-
-/* Exercise 2 */
-let students =
-["Rahul", "Aman", "Priya", "Neha", "Karan"];
-
-console.log("Student Names:");
-
-students.forEach(function(student) {
-    console.log(student);
-});
-
-/* Exercise 3 */
-let longNames =
-students.filter(name => name.length > 4);
-
-console.log("Names longer than 4 characters:");
-console.log(longNames);
-
-/* Exercise 4 */
-let numbers = [1, 2, 3, 4, 5];
-
-let doubled =
-numbers.map(num => num * 2);
-
-console.log("Doubled Numbers:");
-console.log(doubled);
-
-/* Exercise 7 */
-function largerNumber(a, b) {
-    return a > b ? a : b;
-}
-
-console.log(
-    "Larger Number:",
-    largerNumber(20, 45)
-);
-
-/* Exercise 8 */
-let nums = [10, 20, 30, 40, 50];
-
-let sum = 0;
-
-for (let i = 0; i < nums.length; i++) {
-    sum += nums[i];
-}
-
-console.log("Sum:", sum);
-
-/* Exercise 9 */
-let student = {
-    name: "Rahul",
-    age: 20,
-    course: "BCA"
-};
-
-console.log("Student Object:");
-console.log(student.name);
-console.log(student.age);
-console.log(student.course);
-
-/* Exercise 12 */
-function checkEvenOdd(num) {
-
-    if (num % 2 === 0) {
-        return "Even";
-    }
-
-    return "Odd";
-}
-
-console.log(checkEvenOdd(10));
-console.log(checkEvenOdd(7));
-
-/* Exercise 14 */
-let userName = "John";
-
-let message =
-`Hello, ${userName}! Welcome to JavaScript.`;
-
-console.log(message);
-
-/* Exercise 15 */
-const square = num => num * num;
-
-console.log("Square:", square(6));
-
-</script>
+    <script src="script.js"></script>
 
 </body>
 </html>
