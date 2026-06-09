@@ -5,81 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Practice Day 2</title>
     <link rel="stylesheet" href="style_2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>JavaScript Practice Day 2</h1>
-            <p>Interactive tasks demonstrating HTML, CSS, and JavaScript concepts</p>
-        </header>
-
-        <!-- Task 1: User Information Form -->
-        <section class="task-container">
-            <h2>Task 1 - User Information Form</h2>
-            <form id="userForm">
-                <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="age">Age</label>
-                    <input type="number" id="age" min="1" required>
-                </div>
-                <div class="form-group">
-                    <label for="city">City</label>
-                    <input type="text" id="city" required>
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="userFormMessage"></div>
-            <div id="userFormResult" class="result" style="display: none;"></div>
-        </section>
-
-        <!-- Task 2: Student Marks Checker -->
-        <section class="task-container">
-            <h2>Task 2 - Student Marks Checker</h2>
-            <div class="form-group">
-                <label for="studentName">Student Name</label>
-                <input type="text" id="studentName">
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>JavaScript Practice Day 2</h1>
+                <p>Interactive tasks demonstrating HTML, CSS, and JavaScript concepts</p>
             </div>
-            <div class="form-group">
-                <label for="marks">Marks</label>
-                <input type="number" id="marks" min="0" max="100">
-            </div>
-            <button id="checkResult">Check Result</button>
-            <div id="studentResult" class="result" style="display: none;"></div>
-        </section>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#user-form">User Form</a></li>
+                    <li><a href="#marks-checker">Marks Checker</a></li>
+                    <li><a href="#todo-list">To-Do List</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <!-- Task 3: Simple To-Do List -->
-        <section class="task-container">
-            <h2>Task 3 - Simple To-Do List</h2>
-            <div class="todo-container">
-                <div class="todo-input-group">
-                    <input type="text" id="taskInput" class="todo-input" placeholder="Enter a new task...">
-                    <button id="addTask">Add Task</button>
+    <main class="main-content">
+        <div class="container">
+            <!-- Task 1: User Information Form -->
+            <section id="user-form" class="task-container">
+                <h2>Task 1 - User Information Form</h2>
+                <form id="userForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="userFormMessage"></div>
+                <div id="userFormResult" class="result" style="display: none;"></div>
+            </section>
+
+            <!-- Task 2: Student Marks Checker -->
+            <section id="marks-checker" class="task-container">
+                <h2>Task 2 - Student Marks Checker</h2>
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName">
                 </div>
-                <ul id="todoList" class="todo-list"></ul>
-                <div class="todo-stats">
-                    <div class="stat-item">
-                        <div class="stat-value" id="totalTasks">0</div>
-                        <div class="stat-label">Total Tasks</div>
+                <div class="form-group">
+                    <label for="marks">Marks</label>
+                    <input type="number" id="marks" min="0" max="100">
+                </div>
+                <button id="checkResult">Check Result</button>
+                <div id="studentResult" class="result" style="display: none;"></div>
+            </section>
+
+            <!-- Task 3: Simple To-Do List -->
+            <section id="todo-list" class="task-container">
+                <h2>Task 3 - Simple To-Do List</h2>
+                <div class="todo-container">
+                    <div class="todo-input-group">
+                        <input type="text" id="taskInput" class="todo-input" placeholder="Enter a new task...">
+                        <button id="addTask">Add Task</button>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="completedTasks">0</div>
-                        <div class="stat-label">Completed</div>
+                    <ul id="todoList" class="todo-list"></ul>
+                    <div class="todo-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" id="totalTasks">0</div>
+                            <div class="stat-label">Total Tasks</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="completedTasks">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="pendingTasks">0</div>
+                            <div class="stat-label">Pending</div>
+                        </div>
                     </div>
-                    <div class="stat-item">
-                        <div class="stat-value" id="pendingTasks">0</div>
-                        <div class="stat-label">Pending</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>JavaScript Practice Day 2</h3>
+                    <p>Interactive tasks demonstrating HTML, CSS, and JavaScript concepts</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
                     </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#user-form">User Form</a></li>
+                        <li><a href="#marks-checker">Marks Checker</a></li>
+                        <li><a href="#todo-list">To-Do List</a></li>
+                    </ul>
                 </div>
             </div>
-        </section>
-    </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 JavaScript Practice Day 2. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script_2.js"></script>
 </body>

@@ -29,4 +29,14 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
         
         // Display user information
         resultElement.innerHTML = `
-            <
+            <h3>User Information:</h3>
+            <p><strong>Full Name:</strong> ${user.fullName}</p>
+            <p><strong>Email:</strong> ${user.email}</p>
+            <p><strong>Age:</strong> ${user.age}</p>
+            <p><strong>City:</strong> ${user.city}</p>
+        `;
+    } else {
+        // Display cancellation message
+        messageElement.innerHTML = '<div class="message error">Form submission cancelled.</div>';
+    }
+});
